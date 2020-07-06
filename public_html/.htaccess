@@ -1,0 +1,30 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+    
+    RewriteEngine on
+    RewriteCond %{HTTP_HOST} ^tuimagendeportiva.com [NC,OR]
+    RewriteCond %{HTTP_HOST} ^www.tuimagendeportiva.com [NC]
+    RewriteRule ^(.*)$ https://www.tuimagendeportiva.com/$1 [L,R=301,NC]
+    
+<IfModule>
+
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:tuimagendeportiva.com
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} (www\.)?tuimagendeportiva.com
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:tuimagendeportiva.com
