@@ -1,5 +1,5 @@
 <p align="center">
-<p align="center"><img src="https://ibb.co/6BjmPYs" width="300" height="300"></p>
+<p align="center"><img src="https://i.ibb.co/PQqNhxC/image.png" width="300" height="300"></p>
 </p>
 
 ## Tu Imagen Deportiva
